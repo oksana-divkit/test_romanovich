@@ -1,0 +1,255 @@
+/* General -------*/ 
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 1340px;
+  padding: 20px;
+  margin: 0 auto;
+  font: 16px/1.5 'HelveticaNeueCyr', Helvetica, Arial, sans-serif;
+}
+
+/* Buttons ------*/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px 11px;
+  outline: none;
+  border: 0;
+  font: 15px/1.2 'HelveticaNeueCyr', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  color: #101010;
+  text-align: center;
+  transition: all ease-in .15s;
+  background: #ffd304;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #e95d2a;
+}
+
+.btn:active,
+.btn:focus {
+  background: #e95d2a;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, .4) inset;
+}
+
+/* Fonts -----*/
+@font-face {
+  font-family: 'HelveticaNeueCyr';
+  src: url('../fonts/HelveticaNeueCyr-Roman.woff2') format('woff2'),
+      url('../fonts/HelveticaNeueCyr-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueCyr';
+  src: url('../fonts/HelveticaNeueCyr-Medium.woff2') format('woff2'),
+      url('../fonts/HelveticaNeueCyr-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueCyr';
+  src: url('../fonts/HelveticaNeueCyr-Light.woff2') format('woff2'),
+      url('../fonts/HelveticaNeueCyr-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Products -------*/
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -17px;
+}
+
+.product-card {
+  position: relative;
+  flex: 0 0 calc(25% - 34px);
+  min-width: 0;
+  margin: 0 17px 30px;
+  border: 1px solid #e2e2e2;
+  transition: all .1s;
+}
+
+.product-card:hover {
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.21);
+}
+
+.product-card__photo {
+  display: block;
+  padding: 17px 20px;
+}
+
+.product-card__pic-wrap {
+  position: relative;
+  padding-top: 86.1%;
+}
+
+.product-card__photo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-card__descr {
+  padding: 0 18px 18px;
+}
+
+.product-card__cat {
+  margin: 0 0 .6em;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #aeaeae;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product-card__cat a {
+  text-decoration: none;
+  color: inherit;
+  transition: all .1s;
+}
+
+.product-card__cat a:hover {
+  text-decoration: underline;
+  color: #333;
+}
+
+.product-card__title {
+  margin: 0 0 .7em;
+  height: 42px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 16px;
+  line-height: 1.3125;
+  font-weight: normal;
+  overflow: hidden;
+}
+
+.product-card__title a {
+  text-decoration: underline;
+  color: #2175cc;
+  transition: all .1s;
+}
+
+.product-card__title a:hover {
+  color: #e95d2a;
+}
+
+.price {
+  line-height: 1.3;
+}
+
+.price__old {
+  font-size: 16px;
+  color: #aeaeae;
+}
+
+.price__actual {
+  margin: 0;
+  font-size: 18px;
+  color: #272727;
+  font-weight: 500;
+}
+
+.price__actual sup {
+  font-size: 64%;
+}
+
+.product-card__acions {
+  display: flex;
+  align-items: center;
+}
+
+.product-card__price {
+  min-width: 0;
+}
+
+.product-card__buy {
+  margin: 0 0 0  auto;
+  min-width: 0;
+}
+
+.product-card__buy .btn {
+  min-width: 153px;
+}
+
+.product-card__tape {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  padding: 10px 18px 8px 12px;
+  font-size: 14px;
+  line-height: 1;
+  color: #ffffff;
+  background: #f30a2b;
+  border-radius: 0 0 36px/33px 0;
+  pointer-events: none;
+}
+
+.product-card__tape.yellow {
+  color: #151515;
+  background: #ffd303;
+}
+
+@media only screen and (max-width: 1350px) {
+  .product-card {
+    flex: 0 0 calc(33.33% - 34px);
+  }
+
+  .product-card__buy .btn {
+    min-width: 0;
+  }
+
+}
+
+@media only screen and (max-width: 850px) {
+  .products-list {
+    margin: 0 -10px;
+  }
+
+  .product-card {
+    flex: 0 0 calc(50% - 20px);
+    margin: 0 10px 20px;
+  }
+
+  .product-card__pic-wrap {
+    padding-top: 60%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .products-list {
+    display: block;
+  }
+  
+  .product-card {
+    margin: 0 0 20px;
+  }
+
+  .product-card__pic-wrap {
+    padding-top: 40%;
+  }
+
+}
